@@ -1,3 +1,4 @@
+import os
 import uuid
 
 from telebot import TeleBot
@@ -10,3 +11,7 @@ def save_tg_file(file_id: str, bot: TeleBot) -> str:
     with open(file_name, 'wb') as f:
         f.write(file_bytes)
     return file_name
+
+
+def remove_file(file_path: str) -> None:
+    os.remove(file_path)
